@@ -20,13 +20,12 @@ uint8_t CRC8_upd ( uint8_t crc, uint8_t data )
 
 #define receiver_address	0xCD	// Адрес нашего приёмника
 
-if ( ( msg[0] == 0x01 ) && 
-	 ( msg[1] == 0x02 ) && 
-	 ( msg[2] == 0x03 ) && 
-	 ( msg[3] == 0x04 ) && 
-	 ( msg[4] == receiver_address )
-	)
-{		// сообщение для нас
+if ( 	( msg[0] == 0x01 ) && 
+	( msg[1] == 0x02 ) && 
+	( msg[2] == 0x03 ) && 
+	( msg[3] == 0x04 ) && 
+	( msg[4] == receiver_address ) )
+{	// сообщение для нас
 	// Вычисляем CRC8 всего сообщения, кроме самой CRC
 	uint8_t i=0, CRC8 = 0;
 	
